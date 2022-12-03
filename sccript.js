@@ -19,7 +19,6 @@
 // return result;
 // }
 
-
 // const numbers = [1, 3, 4, 5];
 // console.log(each (numbers,  (number) => number * 21));
 
@@ -34,20 +33,15 @@
 //   { make: 'Ford', model: 'F-150', type: 'truck', amount: 11, price: 27110, onSale: true },
 //   { make: 'Ford', model: 'Fusion', type: 'sedan', amount: 13, price: 22120, onSale: true },
 // ]
-  
-       
+
 //Реалізувати фільтр за якістю amount і отримати
 // Тільки назва моделі
 
-
 // const getAvailableCarNames = (vehicles, threshhold) => {
 //     return vehicles.filter(({amount}) => amount > threshhold).map(({model}) => model);
-// } 
-
-
+// }
 
 // console.table(getAvailableCarNames(vehicles, 12))
-
 
 //Отримати машини на розпродажі і сортувати за зменшенням ціни
 
@@ -56,3 +50,41 @@
 // }
 
 // console.log(getCarsOnSale(vehicles));
+
+// Призначити знижку 20% на фрукти в масиві,
+//Присвоїти ID для кожного продукту
+
+// const fruits = [
+//   { name: "apple", price: 200 },
+//   { name: "orange", price: 300 },
+//   { name: "grapes", price: 750 },
+// ];
+
+// const sale = (fruits) => {
+//   const newFruits = fruits.map((fruit) => ({
+//     ...fruit,
+//     id: Date.now(),
+//     price: fruit.price * 0.8,
+//   }));
+//   console.log(newFruits);
+// };
+
+// sale(fruits);
+
+// Дізнатись загальні роки практики в об'єкті workers
+
+// const workers = [
+//   { id: 10, name: "Mango", years: 14 },
+//   { id: 2, name: "Poly", years: 19 },
+//   { id: 41, name: "Ajax", years: 30 },
+//   { id: 99, name: "Kiwi", years: 22 },
+// ];
+
+// const sum = (workers) => {
+//   return workers.reduce(
+//     (previousValue, worker) => (previousValue += worker.years),
+//     0
+//   );
+// };
+
+// console.log(sum(workers));
