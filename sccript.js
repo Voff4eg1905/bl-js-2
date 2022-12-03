@@ -89,8 +89,6 @@
 
 // console.log(sum(workers));
 
-
-
 // function ownFilter (array, callback) {
 // let result = [];
 // for (let i = 0; i < array.length; i +=1) {
@@ -101,10 +99,9 @@
 // return result
 // }
 
-const numbers = [1, 3, 4, 5, 1, 6, 3, 5, 2, 10, 10, 11];
+// const numbers = [1, 3, 4, 5, 1, 6, 3, 5, 2, 10, 10, 11];
 // ownFilter (numbers, (number) => number > 3);
 // console.log(ownFilter (numbers, (number) => number > 3));
-
 
 // function ownFind (array, callback) {
 //     for (let i = 0; i < array.length; i+=1) {
@@ -116,14 +113,42 @@ const numbers = [1, 3, 4, 5, 1, 6, 3, 5, 2, 10, 10, 11];
 
 // const checkNumber = number => number===100;
 
-
 // console.log(ownFind (numbers, checkNumber));
 
 // const uniqueNumbers = numbers.filter((element, index, array) => (array.indexOf(element) === index));
 
-const uniqueNumbers = numbers.reduce((previousValue, element, index, array) =>
-    previousValue.includes(element) ? previousValue : [...previousValue, element],
+// const uniqueNumbers = numbers.reduce((previousValue, element, index, array) =>
+//     previousValue.includes(element) ? previousValue : [...previousValue, element],
 
-    [] );
-    
-console.log(uniqueNumbers);
+//     [] );
+
+// console.log(uniqueNumbers);
+
+//11. Знайти перший унікальний символ у рядку
+//У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
+
+let input1 = "leetcode"; //0
+let input2 = "loveleetcode"; //2
+let input3 = "aabb"; //-1
+
+function findFirstUnique(string) {
+  const array = [...string];
+  const object = array.reduce((previousValue, item) => {
+    if (previousValue[item]) {
+      previousValue[item] += 1;
+    } else {
+      previousValue[item] = 1;
+    }
+    return previousValue;
+  }, {});
+  console.log(object);
+
+  for (const item in object) {
+    if (object[item] === 1) {
+      return array.indexOf(item);
+    }
+  }
+  return -1;
+}
+
+console.log(findFirstUnique(input3));
