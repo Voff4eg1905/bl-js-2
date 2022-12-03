@@ -91,30 +91,39 @@
 
 
 
-function ownFilter (array, callback) {
-let result = [];
-for (let i = 0; i < array.length; i +=1) {
-   if (callback(array[i])) {
-    result.push(array[i]);
-   }
-}
-return result
-}
+// function ownFilter (array, callback) {
+// let result = [];
+// for (let i = 0; i < array.length; i +=1) {
+//    if (callback(array[i])) {
+//     result.push(array[i]);
+//    }
+// }
+// return result
+// }
 
-const numbers = [1, 3, 4, 5, 1, 6, 3, 5];
-ownFilter (numbers, (number) => number > 3);
-console.log(ownFilter (numbers, (number) => number > 3));
-
-
-function ownFind (array, callback) {
-    for (let i = 0; i < array.length; i+=1) {
-        if (callback(array[i])) {
-            return array[i];
-        }
-    }
-}
-
-const checkNumber = number => number===100;
+const numbers = [1, 3, 4, 5, 1, 6, 3, 5, 2, 10, 10, 11];
+// ownFilter (numbers, (number) => number > 3);
+// console.log(ownFilter (numbers, (number) => number > 3));
 
 
-console.log(ownFind (numbers, checkNumber));
+// function ownFind (array, callback) {
+//     for (let i = 0; i < array.length; i+=1) {
+//         if (callback(array[i])) {
+//             return array[i];
+//         }
+//     }
+// }
+
+// const checkNumber = number => number===100;
+
+
+// console.log(ownFind (numbers, checkNumber));
+
+// const uniqueNumbers = numbers.filter((element, index, array) => (array.indexOf(element) === index));
+
+const uniqueNumbers = numbers.reduce((previousValue, element, index, array) =>
+    previousValue.includes(element) ? previousValue : [...previousValue, element],
+
+    [] );
+    
+console.log(uniqueNumbers);
