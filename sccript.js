@@ -127,28 +127,40 @@
 //11. Знайти перший унікальний символ у рядку
 //У рядку будуть лише літери латинського алфавіту і вони будуть у lowerCase
 
-let input1 = "leetcode"; //0
-let input2 = "loveleetcode"; //2
-let input3 = "aabb"; //-1
+// let input1 = "leetcode"; //0
+// let input2 = "loveleetcode"; //2
+// let input3 = "aabb"; //-1
 
-function findFirstUnique(string) {
-  const array = [...string];
-  const object = array.reduce((previousValue, item) => {
-    if (previousValue[item]) {
-      previousValue[item] += 1;
-    } else {
-      previousValue[item] = 1;
-    }
-    return previousValue;
-  }, {});
-  console.log(object);
+// function findFirstUnique(string) {
+//   const array = [...string];
+//   const object = array.reduce((previousValue, item) => {
+//     if (previousValue[item]) {
+//       previousValue[item] += 1;
+//     } else {
+//       previousValue[item] = 1;
+//     }
+//     return previousValue;
+//   }, {});
+//   console.log(object);
 
-  for (const item in object) {
-    if (object[item] === 1) {
-      return array.indexOf(item);
-    }
-  }
-  return -1;
-}
+//   for (const item in object) {
+//     if (object[item] === 1) {
+//       return array.indexOf(item);
+//     }
+//   }
+//   return -1;
+// }
 
-console.log(findFirstUnique(input3));
+// console.log(findFirstUnique(input3));
+
+
+// const numbers = [1,2,3,4,5,6,7];
+// for (let i = 0; i < numbers.length/2; i += 1) {
+    
+//     // console.log(numbers[numbers.length-1-i]);
+//     let template = numbers[i];
+//     numbers[i] = numbers[numbers.length-1-i];
+//     numbers[numbers.length-1-i] = template;
+// }
+
+// console.log(numbers);
